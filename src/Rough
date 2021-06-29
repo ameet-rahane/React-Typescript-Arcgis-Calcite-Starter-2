@@ -1,0 +1,102 @@
+ const [FoldersList, setFoldersList] = useState([]);
+  const [FoldersURLList, setFoldersURLList] = useState([]);
+  const [ABC, setABC] = useState([]);
+  const [FoldersURLImageServerNameList,setFoldersURLImageServerNameList] = useState([]);
+ 
+data.folders.forEach(function(item, index) {
+        FoldersURLList.push("http://sampleserver6.arcgisonline.com/arcgis/rest/services/"+item+"?f=json");
+        FoldersList.push(<calcite-pick-list-item label={item}></calcite-pick-list-item>);
+      });
+
+ useEffect(() => {
+    FoldersURLList.forEach(function(item, index) {
+      //console.log(item);{
+      fetch(item)
+      .then(function(resp) {
+        return resp.json();
+      })
+      .then(function(data) {
+        data.services.forEach(function(item, index) {
+          if(item.type === "ImageServer")
+            FoldersURLImageServerNameList.push(item.name);
+        });
+      });
+    });
+    FoldersURLImageServerNameList.forEach(function(item, index) {
+      ABC.push(<calcite-pick-list-item label={item}></calcite-pick-list-item>);
+    });
+    console.log(FoldersURLImageServerNameList);
+  });
+
+              <calcite-panel
+  dir="ltr"
+  dismissible=""
+  height-scale="m"
+  intl-close="Close"
+  class="calcite-theme-light"
+>
+  <h3 class="heading" slot="header-content">Heading</h3>
+  <p>
+                    This application was built by Esri's <a href="mailto: arahane@esri.com" style={{ "color": "cornflowerblue" }}>@arahane</a> </p>
+                  <p>using <a href="https://esri.github.io/calcite-components/" style={{ "color": "cornflowerblue" }}> Calcite Components</a></p>
+  
+</calcite-panel>
+
+
+<calcite-panel
+        dir="ltr"
+        dismissible=""
+        height-scale="m"
+        intl-close="Close"
+        class="calcite-theme-light"
+      >
+        <h3 class="heading" slot="header-content">Heading</h3>
+        <p>This application was built by Esri's <a href="mailto: arahane@esri.com" style={{ "color": "cornflowerblue" }}>@arahane</a> </p>
+        <p>using <a href="https://esri.github.io/calcite-components/" style={{ "color": "cornflowerblue" }}> Calcite Components</a></p>  
+      </calcite-panel>
+
+
+<calcite-popover-manager>
+</calcite-popover-manager>
+              <calcite-popover className="calcite-theme-light" reference-element="reference-element" placement="auto" offset-distance="6" offset-skidding="0" open="" text-close="Close">
+                <div style={{ "padding": "55px 16px" }}>
+                  <p>
+                    This application was built by Esri's <a href="mailto: arahane@esri.com" style={{ "color": "cornflowerblue" }}>@arahane</a> </p>
+                  <p>using <a href="https://esri.github.io/calcite-components/" style={{ "color": "cornflowerblue" }}> Calcite Components</a></p>
+                </div>
+              </calcite-popover>
+
+
+
+
+
+
+              <calcite-shell dir="ltr" class="calcite-theme-light">
+        <div slot="header-content"><b>ESRI Assignment 1 - Ameet Rahane </b></div>
+        <calcite-shell-panel slot="primary-panel" position="start">
+          <calcite-pick-list id="PickList">{ImageServerList}</calcite-pick-list>
+          <calcite-action-bar class="calcite-theme-dark" slot="action-bar">
+            <calcite-action-group>
+            </calcite-action-group>
+          </calcite-action-bar>
+        </calcite-shell-panel>
+        
+        
+        <calcite-shell-center-row height-scale="s" position="end" slot="center-row">
+        
+        </calcite-shell-center-row>
+        <calcite-shell-panel slot="contextual-panel" position="end">
+          <calcite-panel>
+          <div id='viewDiv'></div>
+            <div slot="header-content" style={{"margin": "1% 1% 1% 1%"}}>{ImageServerName}</div>
+            <div style={{"padding": "10% 10% 10% 10%"}}>{ImageServerDesc}</div>
+          </calcite-panel>
+          <calcite-action-bar class="calcite-theme-light" slot="action-bar">
+            <calcite-action-group>
+           
+          <calcite-action text="Idea" id="reference-element" label="Add Item" icon="lightbulb" appearance="solid" scale="m" onClick={CalciteDescriptionPanel}>          
+          </calcite-action>   
+            </calcite-action-group>
+          </calcite-action-bar>
+        </calcite-shell-panel>
+      </calcite-shell>
