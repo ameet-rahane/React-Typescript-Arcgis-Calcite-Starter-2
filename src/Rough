@@ -1,3 +1,6 @@
+ //import esriConfig from 'esri/config';
+import MapView from "@arcgis/core/views/MapView";
+ 
  const [FoldersList, setFoldersList] = useState([]);
   const [FoldersURLList, setFoldersURLList] = useState([]);
   const [ABC, setABC] = useState([]);
@@ -100,3 +103,48 @@ data.folders.forEach(function(item, index) {
           </calcite-action-bar>
         </calcite-shell-panel>
       </calcite-shell>
+
+
+
+
+
+
+
+  // const CalciteDescriptionPanel = () => {
+  //   alert (
+      
+  //   );
+  // }
+  
+
+    // esriConfig.apiKey = "AAPKceab3b0702e6431988a9d58f54c875766e9yyNjIrzJ-dLnpVV90neTDNAJyByq-tKEZcqE6FuwW3eaisO5weuQ-ZxS9VRw4";
+    // const map = new Map({
+    //   basemap: "arcgis-topographic" // Basemap layer service
+    // });
+
+    // const view = new MapView({
+    //   map: map,
+    //   center: [-118.805, 34.027], // Longitude, latitude
+    //   zoom: 13, // Zoom level
+    //   container: "viewDiv" // Div element
+    // });
+    
+    //console.log(FoldersURLImageServerNameList);
+  
+       // data.folders.forEach((item, index) => {
+        //   FoldersURLList.push("http://sampleserver6.arcgisonline.com/arcgis/rest/services/"+item+"?f=json");
+        //   //console.log(FoldersURLList[index])
+        //   //FoldersList.push(<calcite-pick-list-item label={item}></calcite-pick-list-item>);
+        // });
+     // data.folders.forEach((item, index) => {
+        //   FoldersURLList.push("http://sampleserver6.arcgisonline.com/arcgis/rest/services/"+item+"?f=json");
+        //   //console.log(FoldersURLList[index])
+        //   //FoldersList.push(<calcite-pick-list-item label={item}></calcite-pick-list-item>);
+        // });
+     // FoldersURLList.forEach((item, index) => {
+      //   fetch(item)
+      //     .then((resp) => resp.json())
+      //     .then((data) => FoldersDataServices.push(data.services))
+      //     .then(() => console.log(FoldersDataServices[0].name));
+      // })
+     
