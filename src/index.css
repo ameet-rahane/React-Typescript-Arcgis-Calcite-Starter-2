@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.mapDiv {
+  width:100%;
+  height:100%;
+}
+
+.serviceName {
+  margin: 1% 1% 1% 1%;
+}
+
+.serviceDescription {
+  padding: 10% 10% 10% 10%;
+}
+
+.webappHeading {
+  padding: 10% 10% 10% 10%;
+  font-weight: bold;
+}
+
+.detailPanel {
+  padding: 55px 16px;
+}
+
+a {
+  color: cornflowerblue;
+  text-decoration: none;
+}

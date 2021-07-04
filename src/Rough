@@ -147,4 +147,19 @@ data.folders.forEach(function(item, index) {
       //     .then((data) => FoldersDataServices.push(data.services))
       //     .then(() => console.log(FoldersDataServices[0].name));
       // })
-     
+     // const FolderNames = data.folders.map( FolderNames => FolderNames);
+        // setFoldersNamesList(FolderNames);
+        // //console.log(FoldersNamesList);
+        // FoldersNamesList.forEach((item) => {
+        //   FoldersListURL.push(URL+'/'+item+'?f=pjson');
+        // })
+        // //console.log(FoldersListURL);
+        // FoldersListURL.forEach((folderURL) => {
+        //   fetch(folderURL)
+        //   .then((respFolder) => //console.log(Object.keys(respFolder.json())))
+        //   .then((FolderData) => {
+        //     //console.log(FolderData);
+        //   })
+        // });
+      
+      
